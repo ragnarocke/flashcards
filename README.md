@@ -55,6 +55,18 @@ the indexEnd argument is optional which means you can leave it out.
 Not useful
 Useful
 
+# Text ellipsis Project I 
 
+This is the first challenge where you can use the BROWSER tab.
+You are given the code inside the index.html, index.css, and index.js.
+
+You can now try your code by clicking on the BROWSER tab and interacting with the challenge. For example, in this challenge, you can write text inside the given text box.
+
+The code given in the index.js might be completely new to you, as it's the code that manipulates the DOM. This will be explained in several chapters later in this course.
+
+You may also have noticed that the function given to you is preceded by the export keyword. Make sure to keep this keyword as it allows us to import your code in the index.js file. This will also be explained in a later chapter.
+
+Now, here are the instructions for this challenge:
+Complete the function getDescription such that it returns the first 10 characters of the text parameter it receives.  
 
 
