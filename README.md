@@ -270,3 +270,225 @@ Complete the function renderTableRow such that it returns the following HTML:
 where label here and value here are replaced with the parameters label and value respectively. Make sure to look at the code in the index.js to see how this function is being used (the DOM code will most likely not be understandable at the point, that's because we haven't explained it yet).
 
 Don't forget to look at the end result in the BROWSER tab!
+
+code
+
+index.js
+
+import {renderTableRow} from "./nutrition.js";
+
+let htmlForCarbs = renderTableRow("Carbs", "17g");
+let htmlForProtein = renderTableRow("Protein", "19g");
+let htmlForFat = renderTableRow("Fat", "5g");
+
+const tbody = document.querySelector("#nutrition-table tbody");
+tbody.insertAdjacentHTML("beforeend", htmlForCarbs);
+tbody.insertAdjacentHTML("beforeend", htmlForProtein);
+tbody.insertAdjacentHTML("beforeend", htmlForFat);
+
+
+nutrition.js
+
+/**
+ * @param {string} label
+ * @param {string} value
+ */
+export function renderTableRow(label, value) {
+    return "<tr>\n\t<td>"+label+"</td>\n\t<td>"+value+"</td>\n</tr>"
+
+}
+
+
+index.html
+
+<nav class="navbar">
+    <h1 class="nav-brand">Nutrition table</h1>
+</nav>
+
+<main class="container">
+    <table class="table" id="nutrition-table">
+        <thead>
+            <tr>
+                <th>Nutrition</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</main>
+
+
+index.css
+
+:root {
+  --white: #fff;
+  --black: #000;
+
+  /* Primary colors*/
+  --primary-1: #2b8379;
+  --primary-2: #19a596;
+  --primary-3: #7fd1c7;
+  --primary-4: #7fd1c7;
+  --primary-5: #d0f3ef;
+
+  /* Neutral colors */
+  --neutral-1: #2c2c2c;
+  --neutral-2: #434343;
+  --neutral-3: #94868b;
+  --neutral-4: #d9cfd3;
+  --neutral-5: #f2ecee;
+
+  /* Accent-blue colors */
+  --accent-1: #970e3d;
+  --accent-2: #c43464;
+  --accent-3: #de7699;
+  --accent-4: #e6c3ce;
+  --accent-5: #fff2f7;
+}
+
+body {
+  background-color: var(--neutral-5);
+  margin: 0;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+p {
+  line-height: 30px;
+  font-size: 18px;
+}
+
+a {
+  color: var(--primary-2);
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.rounded {
+  border-radius: 30px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+/* FORMS */
+.form h2 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.form h3 {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.form-section {
+  border-bottom: var(--neutral-4) solid 1px;
+  margin-bottom: 20px;
+}
+
+.input-required {
+  color: var(--primary-2);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0 1px;
+}
+
+.label {
+  display: block;
+  font-weight: 500;
+}
+
+.input {
+  font-size: 16px;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  padding: 0.75em 0.5em;
+  min-width: 200px;
+  border: none;
+  border-left: 7px solid var(--neutral-4);
+  transition: border-left-color 160ms;
+  background-color: white;
+  width: 100%;
+}
+
+::placeholder {
+  color: var(--neutral-3);
+}
+
+input:not(.btn):focus {
+  outline: none;
+  border-left: 7px solid var(--primary-1);
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07),
+    0px -3px 7px 1px rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.nav-brand {
+  font-weight: 450;
+  text-decoration: none;
+  padding-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: initial;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background-color: var(--primary-1);
+  color: white;
+  border: 1px solid white;
+}
+
+.table th {
+  padding: 15px;
+}
+.table td {
+  padding: 10px;
+}
+
+.table tbody {
+  font-size: 18px;
+  border: 1px solid white;
+}
+.table tbody tr:nth-child(2n) {
+  background-color: white;
+}
+
+.table tbody tr:nth-child(2n + 1) {
+  background-color: var(--neutral-5);
+}
