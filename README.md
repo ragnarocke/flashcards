@@ -257,3 +257,16 @@ Help
 end?: number, Zero-based index number indicating the end of the substring. The substring includes the characters up to, but not including, the character indicated by end. If end is omitted, the characters from start through the end of the original string are returned., Returns the substring at the specified location within a String object., hint
 
 
+# Nutrition table I 
+
+It's very common in JavaScript to return a string that represents some HTML code. In fact, we'll be doing this quite often in the DOM Chapters. String interpolation comes in handy here because it supports multi-line strings and interpolation.
+
+Complete the function renderTableRow such that it returns the following HTML:
+
+<tr>
+    <td>label here</td>
+    <td>value here</td>
+</tr>
+where label here and value here are replaced with the parameters label and value respectively. Make sure to look at the code in the index.js to see how this function is being used (the DOM code will most likely not be understandable at the point, that's because we haven't explained it yet).
+
+Don't forget to look at the end result in the BROWSER tab!
