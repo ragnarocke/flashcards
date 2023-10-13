@@ -69,4 +69,64 @@ You may also have noticed that the function given to you is preceded by the expo
 Now, here are the instructions for this challenge:
 Complete the function getDescription such that it returns the first 10 characters of the text parameter it receives.  
 
+# code
+
+index.js
+
+import {getDescription} from "./helpers.js";
+
+const input = document.querySelector("#input");
+const output = document.querySelector("#output");
+
+input.addEventListener("input", (event) => {
+    output.textContent = getDescription(event.currentTarget.value);
+});
+
+
+helpers.js
+
+/**
+ * @param {string} text
+ */
+export function getDescription(text) {
+    console.log(text); // write something in the BROWSER and see it in the console
+
+}
+
+
+index.html
+
+<nav class="navbar">
+    <h1 class="nav-brand">Text ellipsis</h1>
+</nav>
+
+<main class="container">
+    <div>
+        <label class="label" for="component-name">Enter text<span class="input-required">*</span></label>
+        <input type="text" class="input" placeholder="Enter your text here" id="input" autocomplete="off">
+    </div>
+
+    <p id="output"></p>
+</main>
+
+
+
+index.css
+
+<nav class="navbar">
+    <h1 class="nav-brand">Text ellipsis</h1>
+</nav>
+
+<main class="container">
+    <div>
+        <label class="label" for="component-name">Enter text<span class="input-required">*</span></label>
+        <input type="text" class="input" placeholder="Enter your text here" id="input" autocomplete="off">
+    </div>
+
+    <p id="output"></p>
+</main>
+
+
+
+
 
